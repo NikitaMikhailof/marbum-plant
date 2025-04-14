@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block search %}    
+{% include "users/includes/search_equipment.html" %}    
+{% endblock %}
+
+{% block content %}
+<p class="total_count">Всего найдено: {{ total }} шт</p>
+{% for post in posts %}
+    <div class="{% cycle 'container-equipment-one' 'container-equipment-two' 'container-equipment-three' %}">
+        <p><img class="img-article-left" src="{{post.photo.url}}"></p>
+        <div class="post-text">
+            <p>{{ post.title }}</p>
+            <p><strong>место установки: </strong>{{ post.place }}</p> 
+        </div><br>
+        <a href="{{ post.get_absolute_url }}" class="button-view-post">Просмотр</a>
+    </div>
+{% endfor %}
+{% endblock content %}
+
+{% block pagination %}
+    <div id="pagination">
+        {% if page_obj.has_other_pages %}
+    <nav class="list-pages">
+        <ul>
+    {% if page_obj.has_previous %}
+    <li class="page-num">
+        <a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+    </li>
+    {% endif %}
+    
+            {% for p in paginator.page_range %}
+            {% if page_obj.number == p %}
+            <li class="page-num page-num-selected">{{ p }}</li>
+            {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2  %}
+            <li class="page-num">
+                <a href="?page={{ p }}">{{ p }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+    
+    {% if page_obj.has_next %}
+    <li class="page-num">
+        <a href="?page={{ page_obj.next_page_number }}">&gt;</a>
+    </li>
+    {% endif %}
+    
+        </ul>
+    </nav>
+    {% endif %}
+        </div>
+    </div>
+{% endblock %}

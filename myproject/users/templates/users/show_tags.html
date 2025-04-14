@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for post in posts %}
+    <div class="{% cycle 'container-equipment-one' 'container-equipment-two' 'container-equipment-three' %}">
+        <p><img class="img-article-left" src="{{post.photo.url}}"></p>
+        <div class="post-text">
+            <p>{{ post.title }}</p>
+            <p><strong>место установки: </strong>{{ post.place }}</p> 
+        </div><br>
+        <a href="{{ post.get_absolute_url }}" class="button-view-post">Просмотр</a>
+    </div>
+    {% endfor %}
+{% endblock content %}

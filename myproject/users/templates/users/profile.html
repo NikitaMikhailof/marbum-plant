@@ -1,0 +1,23 @@
+{% extends 'base_profile.html' %}
+
+
+{% block content %}
+
+<div class="wrapper_profile">
+    <div class="profile_photo">
+        <div class="avatar">
+            <img  src="{{ user.photo.url }}">
+        </div>
+    </div>
+    <div class="profile_info">
+        <p>Фамилия : {{ user.last_name }}</p> 
+        <p>Имя : {{ user.first_name }}</p> 
+        <p>Отчество : {{ user.third_name}}</p>
+        <p>Должность : {{ user.job}}</p>
+        <p>Подразделение : {{ user.department}}</p>
+        <p>E-mail : {{ user.email}}</p>
+        <p>Телефон : {{ user.telephone}}</p>
+    </div>
+</div>
+
+{% endblock %}

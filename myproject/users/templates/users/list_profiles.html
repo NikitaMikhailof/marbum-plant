@@ -1,0 +1,61 @@
+{% extends 'base_profile.html' %}
+
+{% block search %}    
+{% include "users/includes/search_profile.html" %}    
+{% endblock %}
+
+
+{% block content %}
+
+{% for user in users %}
+<div class="wrapper_profile">
+    <div class="profile_photo">
+        <div class="avatar">
+            <img  src="{{ user.photo.url }}">
+        </div>
+    </div>
+    <div class="profile_info">
+        <p>Фамилия : {{ user.last_name }}</p> 
+        <p>Имя : {{ user.first_name }}</p> 
+        <p>Отчество : {{ user.third_name}}</p>
+        <p>Должность : {{ user.job}}</p>
+        <p>Подразделение : {{ user.department}}</p>
+        <a href="{% url 'detail_profile' user.pk %}">Просмотреть</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block pagination %}
+<div id="pagination">
+    {% if page_obj.has_other_pages %}
+<nav class="list-pages">
+    <ul>
+{% if page_obj.has_previous %}
+<li class="page-num">
+    <a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+</li>
+{% endif %}
+
+        {% for p in paginator.page_range %}
+        {% if page_obj.number == p %}
+        <li class="page-num page-num-selected">{{ p }}</li>
+        {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2  %}
+        <li class="page-num">
+            <a href="?page={{ p }}">{{ p }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+
+{% if page_obj.has_next %}
+<li class="page-num">
+    <a href="?page={{ page_obj.next_page_number }}">&gt;</a>
+</li>
+{% endif %}
+
+    </ul>
+</nav>
+{% endif %}
+    </div>
+</div>
+{% endblock %}

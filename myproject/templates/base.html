@@ -1,0 +1,68 @@
+{% load static %}
+{% load equipment_tags %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="{% static 'users/css/style.css'%}" rel="stylesheet" />
+    <!-- Include jQuery and jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <span><a href="{% url 'home' %}" style="text-decoration: none; color: rgb(248, 241, 241);">Справочник  КТЦ ТЭЦ</a></span>
+            <a class="user" href="{% url 'profile' %}">{{ user.last_name }} {{ user.first_name }} {{ user.third_name}}</a>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                <input type="image" class="img-form-logout" name="submit" src="{% static 'users/img/logout.png' %}"  alt="Submit"/>
+                </form>
+            {% block search %}    
+            {% endblock %}  
+        </div>
+        <br>
+        <div id="container">
+            <div id="sidebar">
+                <div class="dropdown">
+                    <button onclick="my_categories()" class="dropbtn">Категории</button>
+                    <div id="myDropdown" class="dropdown-content">
+                    {% get_categories as categories %}
+                    {% for cat in categories %}
+                      <a href="{% url 'show_category' cat.slug %}">{{ cat }}</a>
+                    {% endfor %}  
+                    </div>
+                </div><br><br>
+                <div class="tags">
+                    {% get_tags as tags %}
+                    {% for tag in tags %}
+                        <a href="{% url 'show_tag' tag.slug %}"># {{ tag }}</a><br>
+                    {% endfor %}  
+                </div>
+                <br><br> 
+                <div class="journal_button">
+                    <a href="{% url 'journal' %}">Журнал</a>
+                </div><br>
+                <div class="journal_button">
+                    <a href="{% url 'comment' %}">Комментарии</a>
+                </div><br>
+                <div class="journal_button">
+                    <a href="{% url 'schema_equipment' %}">Схемы</a>
+                </div>     
+            </div>
+            <div class="wrapper-content">
+                <div id="content" >
+                    {% block content %}
+                    {% endblock %}
+                </div>
+                {% block pagination %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+<script src="{% static 'users/js/script.js' %}"></script>
+</html>

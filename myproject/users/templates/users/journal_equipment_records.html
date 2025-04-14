@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block search %}    
+{% include "users/includes/search_journal.html" %}    
+{% endblock %}
+
+{% block content %}
+<table>
+    <caption>Записи ТО/ТР оборудования</caption>
+    <thead>
+        <tr>
+            <th>Оборудование</th>
+            <th>Вид ремонта</th>
+            <th>Ответственный</th>
+            <th>Дата / время</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for record in records %}
+        <tr>
+            <td><a href="{{ record.equipment.get_absolute_url }}">{{ record.equipment.title }}</a></td>
+            <td>{{ record.body }}</td>
+            <td>{{ record.user }}<br>({{ record.user.job }})</td>
+            <td>{{ record.time_create }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block pagination %}
+    <div id="pagination">
+        {% if page_obj.has_other_pages %}
+    <nav class="list-pages">
+        <ul>
+    {% if page_obj.has_previous %}
+    <li class="page-num">
+        <a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+    </li>
+    {% endif %}
+    
+            {% for p in paginator.page_range %}
+            {% if page_obj.number == p %}
+            <li class="page-num page-num-selected">{{ p }}</li>
+            {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2  %}
+            <li class="page-num">
+                <a href="?page={{ p }}">{{ p }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+    
+    {% if page_obj.has_next %}
+    <li class="page-num">
+        <a href="?page={{ page_obj.next_page_number }}">&gt;</a>
+    </li>
+    {% endif %}
+    
+        </ul>
+    </nav>
+    {% endif %}
+        </div>
+    </div>
+{% endblock %}

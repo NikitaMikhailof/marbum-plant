@@ -1,0 +1,63 @@
+{% load static %}
+{% load equipment_tags %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="{% static 'users/css/style.css'%}" rel="stylesheet" />
+    <!-- Include jQuery and jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <span><a href="{% url 'home' %}" style="text-decoration: none; color: rgb(248, 244, 244);">Справочник  КТЦ ТЭЦ</a></span>
+            <a class="user" href="{% url 'profile' %}">{{ request.user.last_name }} {{ request.user.first_name }} {{ request.user.third_name}}</a>
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                <input type="image" class="img-form-logout" name="submit" src="{% static 'users/img/logout.png' %}"  alt="Submit"/>
+                </form>
+            {% block search %}    
+            {% endblock %}  
+        </div>
+        <br>
+        <div id="container">
+            <div id="sidebar">
+            {% block sidebar %}
+            <br>
+            <fieldset>
+                <legend>Мои сообщения</legend>
+                <a href="{% url 'profile_messages_input' request.user.pk %}">Входящие</a><span id="count_messages">{% get_input_messages  owner=request.user.pk %}</span><br><br>
+                <a href="{% url 'profile_messages_output' request.user.pk %}">Отправленные</a><span id="count_messages">{% get_output_messages  sender=request.user.pk %}</span>
+            </fieldset><br><br>
+            <fieldset>
+                <legend>Мои записи</legend>
+                <a href="{% url 'profile_journals' request.user.pk %}">Журнал</a><span id="count_messages">{% get_count_journals  user=request.user.pk %}</span><br><br>
+                <a href="{% url 'profile_comments' request.user.pk %}">Комментарии</a><span id="count_messages">{% get_count_comments  user=request.user.pk %}</span>
+            </fieldset><br><br>
+            <fieldset>
+                <legend>Общее</legend>
+                <a href="{% url 'list_profiles' %}">Сотрудники</a><br><br>
+                <a href="{% url 'journal' %}">Журнал ТО/ТР</a><br><br>
+                <a href="{% url 'comment' %}">Журнал комментариев</a><br><br>
+                <a href="{% url 'schema_equipment' %}">Схемы</a>
+            </fieldset><br><br>
+            {% endblock %}    
+            </div>
+            <div class="wrapper-content">
+                <div id="content" >
+                    {% block content %}
+                    {% endblock %}
+                </div>
+                {% block pagination %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+<script src="{% static 'users/js/script.js' %}"></script>
+</html>

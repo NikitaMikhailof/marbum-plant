@@ -1,0 +1,671 @@
+.container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.wrapper-outer {
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -145px 0 0 -145px;
+    background-color: rgb(197, 189, 189);
+    
+}
+
+.wrapper {
+    width: 300px;
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -125px 0 0 -125px;
+}
+
+input[type="text"] {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 16px; 
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+}
+
+input[type="password"] {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+}
+
+input[type="submit"] {
+    width: 310px;
+    height: 40px;
+    background-color: rgb(121, 21, 26);
+    border-radius: 10px;
+    font-size: 17px;
+    color: white;
+    border: none;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(82, 9, 9);
+}
+
+
+#wrapper {
+	width: 100%;
+	margin: 30px auto;  
+}
+
+#header {
+	height: 35px;
+	padding: 20px;
+	background-color: rgb(116, 32, 32);
+    border: none;
+}
+
+#header span {
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(247, 240, 240);
+}
+
+#container {
+	display: flex;
+}
+
+.wrapper-content {
+    width: 100%;
+    height: 800px;
+}
+
+#content {
+	width: 100%;
+	height: 680px;
+	padding: 20px;
+    border: 1px black;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+#pagination {
+    margin-top: 20px;
+    width: 100%;
+    height: 60px;
+}
+
+.list-pages {
+	text-align: center;
+	margin: 0 0 20px 0;
+}
+.list-pages ul {
+	margin: 20px 0 0 0;
+	padding: 0;
+	list-style: none;
+}
+.list-pages ul li {
+	display: inline-block;
+	margin: 0 20px 0 0;
+}
+.list-pages a {
+	color: #000;
+	font-size: 24px;
+	text-decoration: none;
+}
+.list-pages .page-num, .page-num-selected {
+	display: inline-block;
+	width: 60px;
+	height: 44px;
+	padding: 16px 0 0 0;
+	border: 2px solid #831111;
+	border-radius: 30px;
+}
+.list-pages .page-num:hover {
+	box-shadow: 3px 3px 1px #d0d0d0; 
+}
+.list-pages .page-num-selected {
+	border: none;
+	color:  #831111;
+	font-size: 20px;
+}
+.list-pages .page-num-selected:hover {
+	box-shadow: none; 
+}
+
+#sidebar {
+	width: 30%;
+	margin-right: 10px;
+	padding: 10px;
+    margin-bottom: -20px;
+    margin-top: -10px;
+    background-color: rgb(197, 189, 189);
+    border: 1px black;
+}
+#footer {
+	height: 10%;
+	padding: 20px;
+	background-color: rgb(116, 32, 32);
+    border: none;
+}
+
+.search {
+    margin-top: -23px;
+    margin-left: 450px;
+    width: 400px;
+    text-decoration: none;
+}
+
+.search-button {
+    width: 80px;
+    height: 30px;
+    background-color: rgb(173, 80, 85);
+    color: white;
+    margin: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+}
+
+
+.img-form-logout {
+    margin-top: -22px;
+    width: 30px; 
+    height: 30px; 
+    float: right;  
+    padding-right: 10px;
+}
+
+.user {
+    float: right;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    color: rgb(247, 237, 237);
+    margin: 5px;
+    text-decoration: none;
+}
+
+
+.img-article-left {
+    margin-left: 10px;
+    width: 90%;
+    height: 250px;
+}
+
+.post-text {
+    margin: 5px;
+    width: 90%;
+    height: auto;
+    background-color: rgb(197, 189, 189);
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 2px;
+    border-radius: 15px;
+}
+
+.container-equipment-one {
+    float: left;
+    padding-top: 5px;
+    padding-left: 10px;
+    width: 27%;
+    height: auto;
+    border: 10px;
+    border: 2px solid rgb(121, 21, 26);
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.container-equipment-two {
+    float: left;
+    padding-top: 5px;
+    padding-left: 10px;
+    width: 27%;
+    height: auto;
+    border: 10px;
+    border: 2px solid rgb(121, 21, 26);
+    border-radius: 10px;
+    margin: 15px; 
+}
+
+.container-equipment-three {
+    float: left;
+    padding-top: 5px;
+    padding-left: 10px;
+    width: 27%;
+    height: auto;
+    border: 10px;
+    border: 2px solid rgb(121, 21, 26);
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.button-view-post {
+    display: block;
+    border-radius: 5px;
+    background: rgb(54, 58, 56);
+    color: #fff;
+    padding: 8px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+/* Кнопка выпадающего списка */
+.dropbtn {
+    margin-top: 20px;
+    min-width: 260px;
+    height: 35px;
+    background-color: rgb(121, 21, 26);
+    color: white;
+    padding-left: 10px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+  }
+  
+/* Кнопка выпадающего меню при наведении и фокусировке */
+.dropbtn:hover, .dropbtn:focus, .dropdown-content a:hover {
+    background-color: #b43535;
+  }
+  
+/* Контейнер <div> - необходим для размещения выпадающего содержимого */
+.dropdown {
+    padding-left: 12px;
+    position: relative;
+    display: inline-block;
+}
+  
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 260px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+    color: black;
+    padding: 5px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+};
+  
+/* Изменение цвета выпадающих ссылок при наведении курсора */
+.dropdown-content a:hover {background-color: #f0e7e7;}
+  
+/* Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
+.show {display:block;}*
+  
+.tags {
+    width: 80%;
+    padding: 10px;
+    margin-top: 50px;
+    margin-left: 10px;
+    background-color: #516654;
+    height: auto;
+}
+
+.tags a {
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    font-family:'Times New Roman', Times, serif;
+    font-size: large;
+    color: white;
+}
+
+.total_count {
+    padding: 5px;
+    width: 20%;
+    height: 20px;
+    border: 2px solid rgb(52, 59, 61);
+    margin-top: -10px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.pagination {
+    bottom: 0;
+    height: auto;
+    position: absolute;
+}
+
+.main-info {
+    display: flex;
+    width: 100%; 
+    height: 50%;
+}
+
+.main-info .foto {
+    width: 45%; 
+    height: 100%; 
+}
+
+.main-info .information {
+    width: 53%; 
+    height: 100%; 
+}
+
+.other-info {
+    display: flex;
+    width: 100%; 
+    height: 50%;
+}
+
+.other-info .journal {
+    width: 45%; 
+    height: 100%; 
+}
+
+.other-info .comments {
+    width: 53%; 
+    height: 100%; 
+}
+
+
+.main-info .foto #size {
+    padding: 10px;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+.main-info .information p {
+    font-family: Century;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.other-info .journal details summary {
+    margin: 10px;
+    width: 70%;
+    height: 40px;
+    text-align: center;
+    line-height: 29px;
+    color: white;
+    background-color: rgb(71, 55, 55);
+}
+
+.other-info .comments details summary {
+    margin: 10px;
+    width: 70%;
+    height: 40px;
+    text-align: center;
+    line-height: 29px;
+    color: white;
+    background-color: rgb(71, 55, 55);
+}
+
+.other-info .journal p {
+    margin: 10px;
+    width: 70%;
+    height: 40px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 18px;
+    color: black;
+    border: 3px solid rgb(78, 92, 78);
+    border-radius: 25px;
+}
+
+.other-info .comments p {
+    margin: 10px;
+    width: 70%;
+    height: 40px;
+    text-align: center;
+    line-height: 35px;
+    font-size: 18px;
+    color: black;
+    border: 3px solid rgb(78, 92, 78);
+    border-radius: 25px;
+}
+
+.other-info .journal li {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.form_journal {
+    margin: 10px;
+    width: 80%;
+    height: 50%;
+    background-color: rgb(180, 174, 174);
+    border-radius: 10px;
+}
+
+.form_journal form {
+    padding: 20px;
+}
+
+
+.form_journal form textarea {
+    padding: 20px;
+    width: 90%;
+    height: auto;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.form_journal form  button {
+    float: right;
+    background-color: #831111;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    
+}
+
+table {
+  width: 95%;
+  table-layout:fixed;
+  border-top: 7px solid rgb(129, 17, 17);
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 20px;
+  border: 1px solid #dddddd;
+}
+
+td {
+    height: auto;
+    text-align: left;
+	padding: 10px;
+	border: 3px solid #4b534e;
+    word-break: break-all;
+}
+
+th {
+  text-align: center;
+  padding: 10px;
+  border: 3px solid #313532;
+  color: white;
+  background-color: #313532;
+  word-break: break-all;
+ }
+
+ caption {
+    text-align: center;
+    font-size: 20px;
+ }
+
+ td a {
+    color: #610505;
+    font-size: 18px;
+ }
+
+.journal_button{
+    margin-left: 10px;
+    padding: 5px;
+    width: 85%;
+    height: 30px;
+    text-align: center;
+    background-color: #313532;
+}
+
+.journal_button a {
+    text-decoration: none;
+    font-size: 17px;
+    color: white;
+ }
+
+ .wrapper_profile {
+    display: flex;
+    width: 95%;
+    height: 55%;
+    margin: 10px;
+ }
+
+.profile_photo {
+    display: block;
+    margin: 10px;
+    width: 30%;
+    height: 80%;
+    border-radius: 20px;
+}
+
+.avatar {
+    width: 75%;
+    height: 75%;
+    margin: 30px;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid rgb(136, 127, 128);
+}
+
+.profile_info {
+    display: block;
+    top: 20px;
+    margin: 10px;
+    width: 50%;
+    height: 80%;
+    background-color: #d1c8c8;
+    border-radius: 20px;
+    text-align: left;
+    font-size: large;
+    padding-left: 50px;
+}
+
+.profile_info a {
+    width: 120px;
+    text-decoration: none;
+    padding: 5px;
+    color: white;
+    background-color: #413e3e;
+    border-radius: 5px;
+}
+
+
+fieldset {
+    max-width:400px;
+    padding:20px;
+    font-size: large;
+    border: 2px solid #8a3636;
+    border-radius: 10px;
+}
+
+#count_messages{
+    float: right;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #2f6e35;
+    border-radius: 20%;
+    color: white;
+}
+
+fieldset a {
+    text-decoration: none;
+    color: #363333;
+}
+
+legend {
+    background-color: #8a3636;
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 7px;
+}
+
+
+.profile_info_detail {
+    display: block;
+    top: 20px;
+    margin: 10px;
+    width: 50%;
+    height: 100%;
+    background-color: #d1c8c8;
+    border-radius: 20px;
+    text-align: left;
+    font-size: medium;
+    padding-left: 50px;
+}
+
+.message_form  textarea {
+    width: 400px;
+    height: 40px;
+    font-size: large;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.message_form  button {
+    width: 170px;
+    height: 40px;
+    margin: 10px;
+    background-color: #7e2323;
+    border: none;
+    color: white;
+    border-radius: 10px;
+}
+
+.messages_element {
+    background-color: #aeb8b1;
+    height: auto;
+    width: 60%;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.messages_element  #owner a {
+    font-size: medium;
+    color: rgb(28, 25, 71)
+}
+
+.messages_element  #time {
+    float: right;
+    font-size: medium;
+}
+
+.messages_element  #body {
+    margin: 10px;
+    font-size: large;
+    font-weight: 700;
+    color: #610505;
+    word-break: break-all;
+}

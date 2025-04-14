@@ -1,0 +1,15 @@
+<div class="search">
+    <form action="{% url 'profile_search_comments' %}" method="POST">
+        {% csrf_token %}
+        <input id="search" name="query" type="text" placeholder="введите запрос" required>
+        <button class="search-button" type="submit">Поиск</button>
+    </form>
+    <script>
+        $(function() {
+            $("#search").autocomplete({
+                source: "{% url 'equipment-autocomplete' %}",
+                minLength: 2, // Minimum characters before triggering autocomplete
+            });
+        });
+    </script>  
+</div>
