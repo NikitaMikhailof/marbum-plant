@@ -1,3 +1,4 @@
+{% load cache %}
 {% load static %}
 {% load equipment_tags %}
 
@@ -6,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="{% static 'users/css/style.css'%}" rel="stylesheet" />
     <link type="text/css" href="{% static 'users/css/style.css'%}" rel="stylesheet" />
     <!-- Include jQuery and jQuery UI -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -27,6 +29,7 @@
         <br>
         <div id="container">
             <div id="sidebar">
+            {% cache 60 sidebar %}
             {% block sidebar %}
             <br>
             <fieldset>
@@ -46,7 +49,8 @@
                 <a href="{% url 'comment' %}">Журнал комментариев</a><br><br>
                 <a href="{% url 'schema_equipment' %}">Схемы</a>
             </fieldset><br><br>
-            {% endblock %}    
+            {% endblock %}  
+            {% endcache %}  
             </div>
             <div class="wrapper-content">
                 <div id="content" >
@@ -61,3 +65,4 @@
 </body>
 <script src="{% static 'users/js/script.js' %}"></script>
 </html>
+

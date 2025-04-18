@@ -8,7 +8,7 @@
 <p class="total_count">Всего позиций: {{ total }}</p>
 {% for post in posts %}
     <div class="{% cycle 'container-equipment-one' 'container-equipment-two' 'container-equipment-three' %}">
-        <p><img class="img-article-left" src="{{post.photo.url}}"></p>
+        <p><img class="img-article-left" src="{{ post.photo.url }}"></p>
         <div class="post-text">
             <p>{{ post.title }}</p>
             <p><strong>место установки: </strong>{{ post.place }}</p> 
