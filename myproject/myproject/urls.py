@@ -18,10 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from users.views import PostListView    
+from django.views.decorators.cache import cache_page
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', cache_page(60)(PostListView.as_view()), name='home' ),
     path('accounts/', include('accounts.urls')),
     path('equipment/', include('users.urls')),
 ]
